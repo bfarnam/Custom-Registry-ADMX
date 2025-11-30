@@ -1,0 +1,27 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" >
+<displayName >Dell Unified User Consent</displayName>
+    <description >Dell Unified User Consent</description>
+    <resources >
+        <stringTable >
+            <!--Storage for String Definitions-->
+            <string id="String_SupportedOn_Windows_10_Windows_11" >Windows 10, Windows 11</string>
+            <string id="String_SupportedOn_Undefined_179" >Undefined</string>
+            <string id="String_ScreenSaver">Screen Saver Settings</string>
+            <string id="Shuffle_Display" >Enable Shuffle</string>
+            <string id="Shuffle_Explain" >Enable or Disable Shuffle.  Disabled by default or if not configured.</string>
+            <string id="Speed_Display">Speed</string>
+            <string id="Speed_Explain">Sets the Slideshow Speed to Slow, Medium, or Fast.</string>
+            <string id="Speed_0_Enum">Slow</string>
+            <string id="Speed_1_Enum">Medium</string>
+            <string id="Speed_2_Enum">Fast</string>
+            <string id="EncryptedPIDL_Display">EncryptedPIDL</string>
+            <string id="EncryptedPIDL_Explain">This is the encypted path to the directory for the photo-screen saver.</string>
+        </stringTable>
+        <presentationTable>
+            <presentation id="Shuffle" />
+            <presentation id="Speed"><dropdownList refId="Speed" /></presentation>
+            <presentation id="EncryptedPIDL"><textBox refId="EncryptedPIDL"><label>EncryptedPIDL</label></textBox>
+      </presentation>
+        </presentationTable>
+    </resources>
+</policyDefinitionResources>

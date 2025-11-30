@@ -1,0 +1,49 @@
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions" >
+    <policyNamespaces>
+        <target prefix="ScreenSaver" namespace="Custom.Policies.ScreenSaver" />
+        <using namespace="Custom.Policies" prefix="Custom"/>
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" fallbackCulture="en-US"/>
+    <supportedOn >
+        <definitions >
+            <definition name="SupportedOn_1011" displayName="$(string.String_SupportedOn_Windows_10_Windows_11)" />
+        </definitions>
+    </supportedOn>
+    <categories >
+        <!--Storage for Category Definitions-->
+        <category displayName="$(string.String_ScreenSaver)" name="ScreenSaver">
+            <parentCategory ref="Custom:Cat_Custom"/>
+        </category>
+    </categories>
+    <policies >
+        <!--Storage for Policy Definitions-->
+        <policy name="Shuffle" class="User" displayName="$(string.Shuffle_Display)" explainText="$(string.Shuffle_Explain)" presentation="$(presentation.Shuffle)"  key="Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver" valueName="Shuffle">
+            <parentCategory ref="ScreenSaver" />
+            <supportedOn ref="SupportedOn_1011" />
+        </policy>
+        <policy name="Speed" class="User" displayName="$(string.Speed_Display)" explainText="$(string.Speed_Explain)" presentation="$(presentation.Speed)" key="Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver">
+            <parentCategory ref="ScreenSaver" />
+            <supportedOn ref="SupportedOn_1011" />
+            <elements>
+                <enum id="Speed" key="Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver" valueName="Speed">
+                    <item displayName="$(string.Speed_0_Enum)">
+                        <value><decimal value="0" /></value>
+                    </item>
+                    <item displayName="$(string.Speed_1_Enum)">
+                        <value><decimal value="1" /></value>
+                    </item>
+                    <item displayName="$(string.Speed_2_Enum)">
+                        <value><decimal value="2" /></value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
+        <policy name="EncryptedPIDL" class="User" displayName="$(string.EncryptedPIDL_Display)" explainText="$(string.EncryptedPIDL_Explain)" presentation="$(presentation.EncryptedPIDL)" key="Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver">
+            <parentCategory ref="screensaver" />
+            <supportedOn ref="SupportedOn_1011" />
+            <elements>
+                <text id="EncryptedPIDL" key="Software\Microsoft\Windows Photo Viewer\Slideshow\Screensaver" valueName="EncryptedPIDL" required="true" />
+            </elements>
+        </policy>
+    </policies>
+</policyDefinitions>
